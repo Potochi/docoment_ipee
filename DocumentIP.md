@@ -422,4 +422,6 @@ sequenceDiagram
 ##### Prioritate la implementare
 Prioritatea implementarii este mica, deoarece exista functionalitati mai importante, cum ar fi jocurile care trebuie implementate primele.
 
+#### Diagrama de context
+![](https://raw.githubusercontent.com/Potochi/docoment_ipee/master/svg/UseCaseDiagram1.svg)
 
