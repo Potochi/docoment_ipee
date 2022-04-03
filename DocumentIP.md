@@ -130,31 +130,8 @@ Actorii care participa la cazurile de utilizare sunt:
 
 
 ##### Diagrama de secventa:
-```mermaid
-sequenceDiagram  
- Jucator->>Server: authenticate()
- activate Server
- Server->>Baza de Date: utilizator/parola
- deactivate Server
- activate Baza de Date
- Baza de Date->>Baza de Date: cautare utilizator
- Baza de Date-->>Server: utilizator valid/invalid
- deactivate Baza de Date
- activate Server
- Server-->>Jucator: OK
- deactivate Server
- Jucator->>Server: lista_jocuri()
- activate Server
- Server-->>Jucator: lista de jocuri
- deactivate Server
- Jucator->>Server: selecteaza_joc(joc)
- activate Server
- Server-->>Jucator: continut joc
- deactivate Server
- activate Jucator
- Jucator->>Jucator: joaca joc
- deactivate Jucator
-```
+
+![joc_singleplayer](https://github.com/Potochi/docoment_ipee/blob/master/png_diagrams/joc_singleplayer_seq.png)
 
 ##### Alternative la fluxul de baza:
 * Jucatorul introduce parola gresita, caz in care acesta va fi redirectionat din nou catre pagina de **Login**, unde va fi nevoit sa introduca din nou parola.
@@ -186,20 +163,7 @@ putem sa implementam noi functionalitati.
 
 
 ##### Diagrama de secventa:
-```mermaid
-sequenceDiagram  
- Jucator->>Server: salveaza_progres()
- activate Server
- Server->>Baza de Date: salveaza_datele()
- deactivate Server
- activate Baza de Date
- Baza de Date-->>Server: id progres
- deactivate Baza de Date
- activate Server
- Server-->>Jucator: link progres
- deactivate Server
-```
-
+![save_progress](https://github.com/Potochi/docoment_ipee/blob/master/png_diagrams/salveaza_progres_seq.png)
 
 ##### Alternative la fluxul de baza:
 * Conexiunea catre server a fost pierduta, caz in care browserul va afisa o pagina de eroare
@@ -227,20 +191,7 @@ Prioritatea implementarii acestui caz este una medie, deoarece este un element d
 
 
 ##### Diagrama de secventa:
-```mermaid
-sequenceDiagram  
- Jucator->>Server: descarca_progres(id)
- activate Server
- Server->>Baza de Date: descarca_datele()
- deactivate Server
- activate Baza de Date
- Baza de Date-->>Server: date progres
- deactivate Baza de Date
- activate Server
- Server-->>Jucator: date progres
- deactivate Server
-```
-
+![load_progress](https://github.com/Potochi/docoment_ipee/blob/master/png_diagrams/load_save_seq.png)
 
 ##### Alternative la fluxul de baza:
 * Linkul este invalid, caz in care va fi afisat un mesaj de eroare care va informa jucatorul de acest fapt.
@@ -268,19 +219,7 @@ Prioritatea implementarii acestui caz este una medie, deoarece este un element d
 
 
 ##### Diagrama de secventa:
-```mermaid
-sequenceDiagram  
- Jucator->>Server: incarca_scor(scor)
- activate Server
- Server->>Baza de Date: salveaza_scor/timp(jucator, scor)
- deactivate Server
- activate Baza de Date
- Baza de Date-->>Server: OK
- deactivate Baza de Date
- activate Server
- Server-->>Jucator: OK
- deactivate Server
-```
+![upload_score](https://github.com/Potochi/docoment_ipee/blob/master/png_diagrams/save_score_seq.png)
 
 ##### Alternative la fluxul de baza:
 * In cazul in care utilizatorul nu doreste sa isi incarce scor-ul/timp-ul acesta va apasa pe butonul de **Reject**.
@@ -309,20 +248,7 @@ Prioritatea implementarii este mica spre medie, deoarece consideram ca este un f
 
 
 ##### Diagrama de secventa:
-```mermaid
-sequenceDiagram  
- Jucator->>Server: vizioneaza_partida(id_partida)
- activate Server
- Server-->>Jucator: OK
- deactivate Server
- loop Vizionare
- Server->>Jucator: cadru joc
- Jucator-->>Server: OK
- end
- Jucator->>Server: opreste vizionarea
- Server-->>Jucator: OK
-```
-
+![spectate](https://github.com/Potochi/docoment_ipee/blob/master/png_diagrams/spectate_seq.png)
 
 ##### Alternative la fluxul de baza:
 * Partida jucata s-a terminat inainte ca jucatorul sa apese butonul de oprire a vizionarii, caz in care acesta este redirectionat automat catre pagina cu jocuri.
@@ -351,20 +277,7 @@ Prioritatea implementarii este medie, deoarece aceasta functionalitate este impo
 
 
 ##### Diagrama de secventa:
-```mermaid
-sequenceDiagram  
- Jucator->>Server: schimba_poza()
- Activate Server
- Server->>Baza de date: salveaza_poza(id)
- Deactivate Server
- Activate Baza de date
- Baza de date-->>Server: OK
- Deactivate Baza de date
- Activate Server
- Server-->>Jucator: Poza salvata
- Deactivate Server
-```
-
+![update_profile](https://github.com/Potochi/docoment_ipee/blob/master/png_diagrams/update_profil_seq.png)
 
 ##### Alternative la fluxul de baza:
 * Conexiunea cu serverul a jucatorului a fost pierduta, caz in care browserul va afisa un mesaj de eroare.
@@ -382,5 +295,5 @@ sequenceDiagram
 Prioritatea implementarii este mica, deoarece exista functionalitati mai importante, cum ar fi jocurile care trebuie implementate primele.
 
 #### Diagrama de context
-![](https://raw.githubusercontent.com/Potochi/docoment_ipee/master/svg/UseCaseDiagram1.svg)
+![context](https://github.com/Potochi/docoment_ipee/blob/master/png_diagrams/context.png)
 
