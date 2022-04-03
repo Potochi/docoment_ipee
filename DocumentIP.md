@@ -258,47 +258,6 @@ sequenceDiagram
 Prioritatea implementarii acestui caz este una medie, deoarece este un element diferentiator fata de platformele competitorilor.orul este informat de acest fapt.
 
 
-#### Continuare progres
-##### Actori:
-* Jucator
-
-
-##### Fluxul de baza:
-* Jucatorul a primit un link de proges de la un alt jucator, acesta il introduce in platforma, ii este confirmat faptul ca progresul a fost adaugat in contul jucatorului.
-
-
-##### Diagrama de secventa:
-```mermaid
-sequenceDiagram  
- Jucator->>Server: descarca_progres(id)
- activate Server
- Server->>Baza de Date: descarca_datele()
- deactivate Server
- activate Baza de Date
- Baza de Date-->>Server: date progres
- deactivate Baza de Date
- activate Server
- Server-->>Jucator: date progres
- deactivate Server
-```
-
-
-##### Alternative la fluxul de baza:
-* Linkul este invalid, caz in care va fi afisat un mesaj de eroare care va informa jucatorul de acest fapt.
-
-
-##### Preconditii:
-* Jucatorul are un cont si este logat pe platforma.
-
-
-##### Postconditii:
-* In profilul jucatorului este adaugat progresul corespunzator link-ului, si este afisat un mesaj prin care jucatorul este informat de acest fapt.
-
-
-##### Prioritate la implementare
-Prioritatea implementarii acestui caz este una medie, deoarece este un element diferentiator fata de platformele competitorilor.orul este informat de acest fapt.
-
-
 #### Incarcare scor/timp
 ##### Actori:
 * Jucator
