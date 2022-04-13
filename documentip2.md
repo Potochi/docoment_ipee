@@ -36,7 +36,7 @@ Scopul acestui document este de a identifica partile care compun sistemul necers
 * Baza de Date - serviciul de stocare a datelor este oferit de Appwrite, care prin SDK pune la dispozitie un API usor de folosit pentru a interoga sau adaga date. In acest serviciu se vor stoca majoritatea datelor aplicatiei, cum ar fi comentariile, pozele de profil si multe altele.
 * User/Admin Service - serviciul de management al utilizatorilor este din nou oferit de catre Appwrite, care permite prin intermediul API-ului sa se efectueze login-uri folosind **OAuth2** prin mai multi **provideri** cum ar fi Google sau Facebook, dar si login cu username si parola create pe platforma. Datorita faptului ca serviciile de gestionare a sesiunilor utilizatorilor sunt integrate, serviciul pentru administratori poate fi realizat foarte simplu dand permisiuni mai mari acestui tip de utilizator, si adaugand limitari la baza de date prin intermediul interfetei grafice.
 
-## TODO DIAGRAMA PULII
+## TODO DIAGRAMA
 
 ### Distributia subsistemelor pe platformele hardware/software
 Subsistemele sunt distribuite pe 2 tipuri de device-uri. 
@@ -47,7 +47,7 @@ Subsistemele sunt distribuite pe 2 tipuri de device-uri.
 In baza de date oferita de appwrite, tabelele din bazele de date clasice sunt inlocuite de **Colectii** iar randurile sunt inlocuite de **Documente**. Baza de date este de tipul **Document Store**, astfel pot fi stocate obiecte arbitrare de tipul JSON, fara a fi nevoie sa se respecte un format.
 
 Totusi pentru a mentine o oarecare ordine, vom folosi schema urmatoare:
-### TODO SCHEMA PULII
+### TODO SCHEMA
 ### Controlul accesului si permisiunile tipurilor de utilizatori
 In principal treaba administratorului este de a mentine civice discutiile, astfel permisiunile de care are nevoie extra sunt cele de a sterge comentarii. In rest acesta se bucura de aceleasi permisiuni ca si utilizatorii.
 
